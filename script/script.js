@@ -41,7 +41,7 @@ function calculate(){
 
    secondValue =Number(secondValue);
    firstsValue = Number(firstsValue);
-    
+   
     if (operator==="+"){
         secondValue+= firstsValue;
        console.log(secondValue);
@@ -58,6 +58,11 @@ function calculate(){
         secondValue/= firstsValue;
         if (secondValue===Infinity){secondValue="Error"};
     }
+    if (secondValue.toString().length>15){
+        secondValue =Number((secondValue.toString()).slice(0,14));
+
+    }
+   
     currentDisplayScreen.textContent=secondValue;
     previousDisplayScreen.textContent ='';
 
